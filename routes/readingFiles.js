@@ -3,7 +3,7 @@ const app=express();
 const fs=require('fs')
 const path=require('path');
 const User=require('../db')
-
+require('dotenv').config();
 const router=express.Router();
 
 

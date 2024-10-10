@@ -1,32 +1,4 @@
 
-// const express=require('express')
-// const mongoose=require('mongoose');
-// const routes=require('./routes/signin');
-// const route=require('./routes/readingFiles');
-// const contact=require('./routes/contact');
-
-// const cors=require('cors')
-// const cookieParser=require('cookie-parser');
-// const app=express();
-
-// app.use(cors({
-//     credentials:true,
-//     origin:['http://localhost:4200']
-// }))
-// app.use(cookieParser())
-// app.use(express.json())
-// app.use('/api',routes)
-// app.use('/api',route);
-// app.use('/api',contact);
-
-// mongoose.connect("mongodb://localhost:27017/my-portfolio",{
-//     useNewUrlParser:true,
-//    }).then(()=>{
-//     console.log('connected to database');
-//     app.listen(1275,()=>{
-//         console.log('server is running');
-//     })
-//    })
 
 // Load environment variables from .env file
 require('dotenv').config();

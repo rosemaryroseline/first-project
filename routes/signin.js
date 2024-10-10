@@ -1,8 +1,9 @@
+require('dotenv').config();
 const {Router}=require('express');
 const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
 const User=require('../db')
-require('dotenv').config();
+
 const router=Router()
 const JWT_SECRET = process.env.JWT_SECRET;
 // const JWT_SECRET = 'gdstf@tvehwi@uhg@gcb';
