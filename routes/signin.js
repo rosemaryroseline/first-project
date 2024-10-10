@@ -6,7 +6,6 @@ const User=require('../db')
 
 const router=Router()
 const JWT_SECRET = process.env.JWT_SECRET;
-// const JWT_SECRET = 'gdstf@tvehwi@uhg@gcb';
 router.post('/register',async(req,res)=>{
   let {name,email,password}=req.body
 
@@ -29,7 +28,7 @@ const result=await user.save()
 const {_id}=await result.toJSON();
 const token=jwt.sign({_id:_id},JWT_SECRET)
 res.cookie('jwt',token,{
-  httoOnly:true,
+  httpOnly:true,
   maxAge:24*60*60*1000
 })
 
@@ -55,22 +54,6 @@ router.post('/login',async(req,res)=>{
 
   })
   res.send({message:"success"});
-})
-
-router.get('/user',async(req,res)=>{
-    try{
-const cookie=req.cookies['jwt']
-const claims=jwt.verify(cookie,JWT_SECRET)
-if(!claims){
-  return res.status(401).send({message:'unauthenticated'})
-}
-
-const user=await User.findOne({_id:claims._id})
-const {password,...data}=await user.toJSON();
-res.send(data)
-    }catch(err){
-return res.status(401).send({message:'unauthenticated'})
-    }
 })
 
 
