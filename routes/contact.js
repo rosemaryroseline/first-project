@@ -1,6 +1,7 @@
+require('dotenv').config();
 const express=require('express');
 const contact=require('../contactdb')
-require('dotenv').config();
+
 const router=express.Router()
 
 router.post('/contact',async(req,res)=>{
